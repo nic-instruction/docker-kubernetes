@@ -1,7 +1,7 @@
 #!/bin/bash
 # GitLab install based on: https://about.gitlab.com/install/#centos-7
 
-# already installed on google cloud by default, but must be configured on another port
+# postfix is already installed on google cloud by default, but must be configured on another port
 # as google cloud blocks all traffic on port 25
 
 yum -y install postfix
