@@ -11,7 +11,7 @@ systemctl -y start postfix
 # download the gitlab install script and run in bash
 curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.rpm.sh | bash
 
-# this will auto-request an ssl cert for your domain if you don't have one
+# the gitlab--ee install will auto-request an ssl cert for your domain
 # if you run without a domain, you can just use http and the external IP
 # which is what we'll do here, because this is just a playground for me and my students
 # EXTERNAL_URL="https://gitlab.example.com" yum install -y gitlab-ee
