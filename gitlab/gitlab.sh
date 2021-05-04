@@ -21,3 +21,17 @@ externalIP=$(curl http://checkip.amazonaws.com/)
 
 # use self signed cert and external ip
 EXTERNAL_URL="https://$externalIP" yum -y install gitlab-ee
+
+# generate admin pw and store it in a relatively safe place on the filesystem
+
+yum -y install openssl
+gitlabPass=$(openssl rand -base64 25)
+echo $gitlabPass > /root/gitlabAdminPass
+chmod 400 /root/gitlabAdminPass
+
+# If you just want to do some poking around with the form, use:
+# curl -k -L --request GET https://$externalIP
+# -k tells curl to ignore the self signed cert, and -L tells it to follow the redirect
+
+
+
