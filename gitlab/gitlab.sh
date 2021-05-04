@@ -13,11 +13,11 @@ curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.rp
 
 # the gitlab--ee install will auto-request an ssl cert for your domain
 # if you run without a domain, you can just use http and the external IP
-# which is what we'll do here, because this is just a playground for me and my students
+# or stick with https for a self-signed cert (just warn the students that browsers will give it major side-eye)
 # EXTERNAL_URL="https://gitlab.example.com" yum install -y gitlab-ee
 
 # find our external ip
 externalIP=$(curl http://checkip.amazonaws.com/)
 
-# sub it in with http
-EXTERNAL_URL="$externalIP" yum -y install gitlab-ee
+# use self signed cert and external ip
+EXTERNAL_URL="https://$externalIP" yum -y install gitlab-ee
