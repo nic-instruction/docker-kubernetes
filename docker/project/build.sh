@@ -8,4 +8,4 @@ docker pull centos:7
 # change into the subdir
 cd centos_with_systemd/Dockerfile
 
-docker build --rm -t local/c7-systemd .
+docker build --rm -t /root/local/c7-systemd .
