@@ -37,5 +37,17 @@ echo '{
   }
 }' >> /etc/docker/daemon.json
 
+
+# configure remote connections via daemon.json
+
+echo '{
+  "hosts": ["unix:///var/run/docker.sock", "tcp://127.0.0.1:2375"]
+}' >> /etc/docker/daemon.json
+
 systemctl restart docker
+
+# currently this does not show a running daemond and I'm a little annoyed
+# but haven't been able to find much on it.  I assume systemd is overwriting it somehow.  Sigh.
+netstat -lntp | grep dockerd
+
 
