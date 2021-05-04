@@ -10,3 +10,13 @@ yum-config-manager     --add-repo     https://download.docker.com/linux/centos/d
 # install and start docker
 yum -y install docker-ce docker-ce-cli containerd.io
 systemctl start docker
+
+# verify docker is running and can deploy containers
+
+ dockerStatus=$(docker run hello-world | grep -c "Hello from Docker\!")
+ 
+ if [ dockerStatus > 0 ]; then
+    echo "Success"
+ else
+    echo "Something Went Wrong"
+ fi
