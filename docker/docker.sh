@@ -25,3 +25,17 @@ systemctl start docker
  else
     echo "Something Went Wrong"
  fi
+
+# enable log rotation for containers
+# on my install it creats this file, but appending just in case it's already there...
+
+echo '{
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "10m",
+    "max-file": "3" 
+  }
+}' >> /etc/docker/daemon.json
+
+systemctl restart docker
+
