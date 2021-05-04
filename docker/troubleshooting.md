@@ -26,3 +26,5 @@ On my example system check (gcloud centos 7 image) the kernel is 3.10 `uname -a`
     - zfs command: missing
     - zpool command: missing
 ```
+
+* Additional troubleshooting resources: https://docs.docker.com/engine/install/linux-postinstall/#configuring-remote-access-with-daemonjson
