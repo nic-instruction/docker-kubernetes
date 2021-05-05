@@ -42,3 +42,14 @@ List volumes
 ```
 docker volume ls
 ```
+
+### View stats and processes
+
+### Get and configure resources/assets
+
+Pull down a new image (in this case, a centos7 image)
+
+```
+docker pull centos:7
+```
+
