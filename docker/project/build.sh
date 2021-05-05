@@ -8,9 +8,10 @@ yum -y install git
 # start by pulling down the centos7 image
 docker pull centos:7
 
-# change into the subdir
-cd centos_with_systemd/Dockerfile
+# change into the subdir where the dockerfile for the
+# systemd image creation lives
+cd centos_with_systemd/
 
-docker build --rm -t /root/local/c7-systemd .
+docker build --rm -t local/c7-systemd .
 
 
