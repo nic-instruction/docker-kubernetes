@@ -16,3 +16,29 @@ Based on the following docs
 * docker/getting-started - the image to use
 
 * https://docs.docker.com/get-started/
+
+## Useful administrative commands
+
+
+List local images
+
+```
+docker images ls
+```
+List containers (running - by default)
+
+```
+docker container ls
+```
+
+List swarm secrets (run on the manager node to list the secrets of the swarm)
+
+```
+docker secret ls
+```
+
+List volumes
+
+```
+docker volume ls
+```
