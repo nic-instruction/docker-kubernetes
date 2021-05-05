@@ -14,4 +14,9 @@ cd centos_with_systemd/
 
 docker build --rm -t local/c7-systemd .
 
+cd ..
+
+docker build --rm -t local/c7-systemd-httpd-php .
+
+docker run -ti -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 80:80 local/c7-systemd-httpd-php
 
