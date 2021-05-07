@@ -44,3 +44,5 @@ export POD_NAME=$(kubectl get pods -o go-template --template '{{rnge .items}}{{.
 
 ## Services
 To expose without a proxy, create a service (liminiting the scope for security)
+
+
