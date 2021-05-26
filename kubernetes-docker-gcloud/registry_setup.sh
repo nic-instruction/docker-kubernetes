@@ -6,3 +6,9 @@ gcloud artifacts repositories create quickstart-docker-repo --repository-format=
 --location=us-central1 --description="Docker repository"
 
 gcloud artifacts repositories list
+
+gcloud auth configure-docker us-central1-docker.pkg.dev --quiet
+
+
+
+
