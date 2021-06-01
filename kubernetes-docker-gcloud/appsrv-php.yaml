@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: appsrv-clusters
+  labels:
+    app: apache-php
+    role: webserver
+    tier: frontend
+spec:
+  replicas: 6
+  selector:
+    matchLabels:
+      app: appsrv
+  template:
+    metadata:
+      labels:
+        app: appsrv
+        role: webserver
+        tier: reontend
+    spec:
+      containers:
+      - name: appsrv
+        image: us-central1-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT/quickstart-docker-repo/appsrv:tag1
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 80

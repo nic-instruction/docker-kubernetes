@@ -1,5 +1,4 @@
 provider "google" {
-  credentials = file("~/creds/serviceaccount.json")
-  project     = "$GOOGLE_CLOUD_PROJECT"
+  project     = "it-228-sprint-2021"
   region      = "us-central1"
 }
